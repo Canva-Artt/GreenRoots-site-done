@@ -3,8 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title>GreenRoots Hair Oil</title>
-        <meta name="description" content="Download free Bootstrap 4 product landing page template Comply." />
+        <meta name="description" content="GreenRoots Hair Oil - 100% natural hair care solution for healthy, strong, and beautiful hair.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Preconnect to external domains -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preconnect" href="https://code.ionicframework.com" crossorigin>
+        <link rel="preconnect" href="https://code.jquery.com" crossorigin>
         
         <!-- Bootstrap -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -17,58 +22,159 @@
       
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        
+        <!-- Enhanced effects and animations -->
+        <style>
+            /* Remove default smooth scroll to fix with our JS */
+            html {
+                scroll-behavior: auto;
+            }
+            
+            /* Original bottle tilt effect */
+            .tilt-bottle {
+                transform: rotate(-8deg) scale(1.15);
+                transition: transform 0.4s ease-in-out;
+                max-height: 520px;
+                margin-top: 20px;
+            }
+            
+            /* Enhanced hover effects */
+            .tilt-bottle:hover {
+                transform: rotate(-5deg) scale(1.2);
+                filter: brightness(1.05);
+            }
+            
+            /* Card hover effects */
+            .card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            /* Button hover effects */
+            .btn {
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .btn-success:hover, .btn-primary:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+            
+            /* Button active animation */
+            .btn.active {
+                animation: btnPulse 0.6s ease;
+            }
+            
+            @keyframes btnPulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+            
+            /* Icon hover effects */
+            .icon-box {
+                transition: transform 0.3s ease, color 0.3s ease;
+            }
+            
+            .icon-box:hover {
+                transform: scale(1.1);
+                color: #28a745;
+            }
+            
+            /* Social media icons */
+            .social-icon {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+                display: inline-block;
+            }
+            
+            .social-icon:hover {
+                transform: translateY(-3px) scale(1.2);
+                opacity: 0.8;
+            }
+            
+            /* Navbar link hover effect */
+            .navbar .nav-link {
+                position: relative;
+                transition: color 0.3s ease;
+            }
+            
+            .navbar .nav-link:after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #28a745;
+                transition: width 0.3s ease;
+            }
+            
+            .navbar .nav-link:hover:after {
+                width: 100%;
+            }
+            
+            /* Contact icons pulse effect */
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+            
+            .contact-icon:hover {
+                animation: pulse 1s infinite;
+            }
+        </style>
     </head>
     <body>
         <!--header-->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top sticky-navigation">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="ion-grid icon-sm"></span>
-            </button>
-            <a class="navbar-brand hero-heading" href="#">GREENROOTS</a>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mr-3">
-                        <a class="nav-link page-scroll" href="#main">Product <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item mr-3">
-                        <a class="nav-link page-scroll" href="#pricing">Pricing</a>
-                    </li>
-                    <li class="nav-item mr-3">
-                        <a class="nav-link page-scroll" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item mr-3">
-                        <a class="nav-link page-scroll" href="#blog">Blog</a>
-                    </li>
-                    <li class="nav-item mr-3">
-                        <a class="nav-link page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
+            <div class="container">
+                <a class="navbar-brand hero-heading" href="#">GREENROOTS</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="ion-grid icon-sm"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mr-3">
+                            <a class="nav-link page-scroll" href="#main">Product <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link page-scroll" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link page-scroll" href="#blog">Blog</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="nav-link page-scroll" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
 <!-- Main Section for Greenroots Hair Oil -->
 <section class="bg-texture hero" id="main" style="padding: 80px 0;">
-    <style>
-        .tilt-bottle {
-            transform: rotate(-8deg) scale(1.15);
-            transition: transform 0.4s ease-in-out;
-            max-height: 520px;
-            margin-top: 20px;
-        }
-
-        html {
-            scroll-behavior: smooth; /* Optional: for simple scroll */
-        }
-    </style>
     <div class="container">
         <div class="row align-items-center">
             <!-- Product Image (tilted & enlarged) -->
-            <div class="col-md-6 text-center wow fadeIn">
+            <div class="col-md-6 text-center">
                 <img class="img-fluid tilt-bottle" src="img/product.png" alt="Greenroots Hair Oil">
             </div>
 
             <!-- Text Content -->
-            <div class="col-md-6 text-white wow fadeIn">
+            <div class="col-md-6 text-white">
                 <h1 class="pt-3" style="font-weight: bold;">
                     Nourish Your Hair Naturally with <span class="text-success">Greenroots</span>
                 </h1>
@@ -82,110 +188,112 @@
                     <li>✔ Improves shine and scalp health</li>
                 </ul>
                 <div class="mt-5">
-                    <a href="#pricing" class="btn btn-success btn-lg">BUY NOW</a>
+                    <a href="#pricing" class="btn btn-success btn-lg page-scroll">BUY NOW</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-
-
-
-<!-- How to Use section -->
-<section class="bg-white p-0">
+<!-- Improved How to Use section -->
+<section class="bg-white p-0" id="how-to-use">
     <div class="container-fluid">
         <div class="row d-md-flex mt-5">
             <div class="col-sm-6 p-0 wow fadeInLeft">
-                <img class="img-fluid" src="img/product2.png" alt="Gallery">
+                <img class="img-fluid" src="img/product2.png" alt="How to use GreenRoots Hair Oil">
             </div>
             <div class="col-sm-6 pl-5 pr-5 pt-5 pb-4 wow fadeInRight">
-                <h3><a href="#">How to Use GreenRoots Hair Oil</a></h3>
-                <p class="lead pt-4">Achieve healthier, stronger hair with the right application! Follow these simple steps for the best results:</p>
+                <h2 class="text-success">How to Use <span class="text-dark">GreenRoots Hair Oil</span></h2>
+                <p class="lead pt-4">Transform your hair care routine with these simple application steps for maximum benefits:</p>
+                
                 <ul class="pt-4 pb-3 list-default">
-                    <li>Take a small amount of GreenRoots Oil in your palms.</li>
-                    <li>Massage gently into your scalp with fingertips in circular motions.</li>
-                    <li>Apply the remaining oil along the length of your hair.</li>
-                    <li>Leave it overnight (at least 3 times a week).</li>
-                    <li>Wash with a mild, sulfate-free shampoo the next morning.</li>
-                    <li>Use regularly to improve hair strength, shine, and overall health.</li>
+                    <li><i class="ion-ios-circle-filled text-success mr-2"></i> <strong>Step 1:</strong> Take a small amount (about 1-2 teaspoons) of GreenRoots Oil in your palms and warm it by rubbing your hands together.</li>
+                    
+                    <li><i class="ion-ios-circle-filled text-success mr-2"></i> <strong>Step 2:</strong> Massage gently into your scalp with fingertips in circular motions for 5-7 minutes to stimulate blood circulation.</li>
+                    
+                    <li><i class="ion-ios-circle-filled text-success mr-2"></i> <strong>Step 3:</strong> Apply the remaining oil along the length of your hair, paying special attention to the tips which are often most damaged.</li>
+                    
+                    <li><i class="ion-ios-circle-filled text-success mr-2"></i> <strong>Step 4:</strong> Leave it overnight for best results (at least 3 times a week) to allow deep penetration of nutrients.</li>
+                    
+                    <li><i class="ion-ios-circle-filled text-success mr-2"></i> <strong>Step 5:</strong> Wash with a mild, sulfate-free shampoo the next morning. For extremely dry hair, a second wash may be needed.</li>
+                    
+                    <li><i class="ion-ios-circle-filled text-success mr-2"></i> <strong>Step 6:</strong> Use regularly to improve hair strength, shine, and overall health. Results typically appear within 2-3 weeks of consistent use.</li>
                 </ul>
-                <a href="#features" class="btn btn-primary mr-2 page-scroll">Discover the Benefits</a>
+                
+                <div class="mt-4">
+                    <a href="#features" class="btn btn-primary mr-2 page-scroll">Discover the Benefits</a>
+                    <span class="text-muted ml-3"><i class="ion-ios-clock-outline"></i> 5-7 min routine</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-
-
-
-
-        <!--pricing-->
-        <section class="bg-light" id="pricing">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12 text-center">
-                        <h2 class="text-primary">Pricing</h2>
-                        <p class="lead pt-3">
-                            Our no-nonsense pricing.
-                        </p>
-                    </div>
-                </div>
-                <div class="row d-md-flex mt-4 text-center">
-                    <!-- 1 Bottle Offer -->
-                    <div class="col-sm-4 mt-4 wow fadeIn">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title pt-4 text-success">1 Bottle</h5>
-                                <h3 class="card-title text-primary pt-4">₨700</h3>
-                                <p class="card-text text-muted pb-3 border-bottom">Save ₨100</p>
-                                <ul class="list-unstyled pricing-list">
-                                    <li>✔ Perfect for trial use</li>
-                                    <li>✔ Natural nourishment</li>
-                                    <li>✔ Easy to carry</li>
-                                </ul>
-                                <a href="order1.html" class="btn btn-success btn-radius">Order 1</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 2 Bottles Offer -->
-                    <div class="col-sm-4 mt-0 wow fadeIn">
-                        <div class="card pt-4 pb-4">
-                            <div class="card-body">
-                                <h5 class="card-title pt-4 text-success">2 Bottles <small class="badge bg-primary small-xs">Popular</small></h5>
-                                <h3 class="card-title text-primary pt-4">₨1200</h3>
-                                <p class="card-text text-muted pb-3 border-bottom">Save ₨200</p>
-                                <ul class="list-unstyled pricing-list">
-                                    <li>✔ Great value combo</li>
-                                    <li>✔ Use for 2 months</li>
-                                    <li>✔ Ideal for couples</li>
-                                </ul>
-                                <a href="order2.html" class="btn btn-success btn-radius">Order 2</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 3 Bottles + 1 Free Offer -->
-                    <div class="col-sm-4 mt-4 wow fadeIn">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title pt-4 text-success">3 Bottles + 1 Free</h5>
-                                <h3 class="card-title text-primary pt-4">₨2000</h3>
-                                <p class="card-text text-muted pb-3 border-bottom">₨200 per bottle</p>
-                                <ul class="list-unstyled pricing-list">
-                                    <li>✔ Best seller offer</li>
-                                    <li>✔ Long-term hair care</li>
-                                    <li>✔ Get 1 bottle free</li>
-                                </ul>
-                                <a href="order3.html" class="btn btn-success btn-radius">Order 3</a>
-                            </div>
-                        </div>
+<!--pricing-->
+<section class="bg-light" id="pricing">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12 text-center">
+                <h2 class="text-primary">Pricing</h2>
+                <p class="lead pt-3">
+                    Our no-nonsense pricing.
+                </p>
+            </div>
+        </div>
+        <div class="row d-md-flex mt-4 text-center">
+            <!-- 1 Bottle Offer -->
+            <div class="col-sm-4 mt-4 wow fadeIn">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title pt-4 text-success">1 Bottle</h5>
+                        <h3 class="card-title text-primary pt-4">₨700</h3>
+                        <p class="card-text text-muted pb-3 border-bottom">Save ₨100</p>
+                        <ul class="list-unstyled pricing-list">
+                            <li>✔ Perfect for trial use</li>
+                            <li>✔ Natural nourishment</li>
+                            <li>✔ Easy to carry</li>
+                        </ul>
+                        <a href="order1.html" class="btn btn-success btn-radius">Order 1</a>
                     </div>
                 </div>
             </div>
-        </section>
+            <!-- 2 Bottles Offer -->
+            <div class="col-sm-4 mt-0 wow fadeIn">
+                <div class="card pt-4 pb-4">
+                    <div class="card-body">
+                        <h5 class="card-title pt-4 text-success">2 Bottles <small class="badge bg-primary small-xs">Popular</small></h5>
+                        <h3 class="card-title text-primary pt-4">₨1200</h3>
+                        <p class="card-text text-muted pb-3 border-bottom">Save ₨200</p>
+                        <ul class="list-unstyled pricing-list">
+                            <li>✔ Great value combo</li>
+                            <li>✔ Use for 2 months</li>
+                            <li>✔ Ideal for couples</li>
+                        </ul>
+                        <a href="order2.html" class="btn btn-success btn-radius">Order 2</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 3 Bottles + 1 Free Offer -->
+            <div class="col-sm-4 mt-4 wow fadeIn">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title pt-4 text-success">3 Bottles + 1 Free</h5>
+                        <h3 class="card-title text-primary pt-4">₨2000</h3>
+                        <p class="card-text text-muted pb-3 border-bottom">₨200 per bottle</p>
+                        <ul class="list-unstyled pricing-list">
+                            <li>✔ Best seller offer</li>
+                            <li>✔ Long-term hair care</li>
+                            <li>✔ Get 1 bottle free</li>
+                        </ul>
+                        <a href="order3.html" class="btn btn-success btn-radius">Order 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-
-        <!--features-->
+<!--features-->
 <section class="bg-light" id="features">
     <div class="container">
         <div class="row mb-3">
@@ -218,7 +326,7 @@
                         </div>
                         <h6>Promotes Hair Growth</h6>
                         <p>
-                            Stimulates hair follicles and promotes faster, thicker hair growth with nature’s finest ingredients.
+                            Stimulates hair follicles and promotes faster, thicker hair growth with nature's finest ingredients.
                         </p>
                     </div>
                 </div>
@@ -279,8 +387,6 @@
     </div>
 </section>
 
-
-
 <!--blog-->
 <section class="bg-light" id="blog">
     <div class="container">
@@ -303,11 +409,11 @@
                             <em class="ion-ios-person-outline"></em> Healthline &nbsp;&nbsp;
                             <em class="ion-ios-time-outline"></em> 5 min read
                         </p>
-                        <h5 class="card-title"><a href="https://www.healthline.com/health/essential-oils-for-hair-growth" target="_blank">9 Essential Oils for Hair Growth & Health</a></h5>
+                        <h5 class="card-title"><a href="https://www.healthline.com/health/essential-oils-for-hair-growth" target="_blank" rel="noopener noreferrer">9 Essential Oils for Hair Growth & Health</a></h5>
                         <p class="card-text">Discover how oils like rosemary, peppermint, and cedarwood can promote hair growth and improve scalp health.</p>
                     </div>
                     <div class="card-body text-right">
-                        <a href="https://www.healthline.com/health/essential-oils-for-hair-growth" target="_blank" class="card-link"><strong>Read more</strong></a>
+                        <a href="https://www.healthline.com/health/essential-oils-for-hair-growth" target="_blank" rel="noopener noreferrer" class="card-link"><strong>Read more</strong></a>
                     </div>
                 </div>
             </div>
@@ -321,11 +427,11 @@
                             <em class="ion-ios-person-outline"></em> Byrdie &nbsp;&nbsp;
                             <em class="ion-ios-time-outline"></em> 4 min read
                         </p>
-                        <h5 class="card-title"><a href="https://www.byrdie.com/scalp-massagers-5248748" target="_blank">Do Scalp Massagers Actually Work? Experts Weigh In</a></h5>
+                        <h5 class="card-title"><a href="https://www.byrdie.com/scalp-massagers-5248748" target="_blank" rel="noopener noreferrer">Do Scalp Massagers Actually Work? Experts Weigh In</a></h5>
                         <p class="card-text">Learn how scalp massagers can increase blood circulation, relieve tension, and potentially promote hair growth.</p>
                     </div>
                     <div class="card-body text-right">
-                        <a href="https://www.byrdie.com/scalp-massagers-5248748" target="_blank" class="card-link"><strong>Read more</strong></a>
+                        <a href="https://www.byrdie.com/scalp-massagers-5248748" target="_blank" rel="noopener noreferrer" class="card-link"><strong>Read more</strong></a>
                     </div>
                 </div>
             </div>
@@ -339,11 +445,11 @@
                             <em class="ion-ios-person-outline"></em> NDTV Food &nbsp;&nbsp;
                             <em class="ion-ios-time-outline"></em> 5 min read
                         </p>
-                        <h5 class="card-title"><a href="https://food.ndtv.com/beauty/coconut-oil-for-hair-loss-use-this-magic-potion-for-happy-and-healthy-tresses-1867004" target="_blank">Coconut Oil for Hair Loss: Use This Magic Potion</a></h5>
+                        <h5 class="card-title"><a href="https://food.ndtv.com/beauty/coconut-oil-for-hair-loss-use-this-magic-potion-for-happy-and-healthy-tresses-1867004" target="_blank" rel="noopener noreferrer">Coconut Oil for Hair Loss: Use This Magic Potion</a></h5>
                         <p class="card-text">Explore the benefits of coconut oil in preventing hair loss and promoting healthy, luscious tresses.</p>
                     </div>
                     <div class="card-body text-right">
-                        <a href="https://food.ndtv.com/beauty/coconut-oil-for-hair-loss-use-this-magic-potion-for-happy-and-healthy-tresses-1867004" target="_blank" class="card-link"><strong>Read more</strong></a>
+                        <a href="https://food.ndtv.com/beauty/coconut-oil-for-hair-loss-use-this-magic-potion-for-happy-and-healthy-tresses-1867004" target="_blank" rel="noopener noreferrer" class="card-link"><strong>Read more</strong></a>
                     </div>
                 </div>
             </div>
@@ -351,66 +457,162 @@
     </div>
 </section>
 
-
-        <!--contact-->
-        <section class="bg-texture-collage p-0" id="contact">
-            <div class="container">
-                <div class="row d-md-flex text-white text-center wow fadeIn">
-                    <div class="col-sm-4 p-5">
-                        <p><em class="ion-ios-telephone-outline icon-md"></em></p>
-                        <p class="lead">+92 329 4660128</p>
-                    </div>
-                    <div class="col-sm-4 p-5">
-                        <p><em class="ion-ios-email-outline icon-md"></em></p>
-                        <p class="lead">info.GreenRoots002@gmail.com</p>
-                    </div>
-                    <div class="col-sm-4 p-5">
-                        <p><em class="ion-ios-location-outline icon-md"></em></p>
-                        <p class="lead">Lahore, Pakistan</p>
-                    </div>
-                </div>
+<!--contact-->
+<section class="bg-texture-collage p-0" id="contact">
+    <div class="container">
+        <div class="row d-md-flex text-white text-center wow fadeIn">
+            <div class="col-sm-4 p-5">
+                <p><em class="ion-ios-telephone-outline icon-md contact-icon"></em></p>
+                <p class="lead">+92 329 4660128</p>
             </div>
-        </section>
-
-<!-- Add this in your <head> if not already -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-    <!--footer-->
-    <section class="bg-footer" id="connect">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12 text-center wow fadeIn">
-                    <h1>GREENROOTS</h1>
-                    <p class="mt-4">
-                        <a href="https://www.instagram.com/greenrootsoil/" target="_blank">
-                            <i class="fab fa-instagram text-twitter-alt icon-sm mr-3"></i>
-                        </a>
-                        <a href="https://www.facebook.com/people/GreenRoots/61571062822680/#" target="_blank">
-                            <i class="fab fa-facebook-f text-facebook-alt icon-sm mr-3"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@greenroot" target="_blank">
-                            <i class="fab fa-tiktok text-linkedin-alt icon-sm mr-3"></i>
-                        </a>
-                        <a href="https://x.com/GreenRoots_Oil" target="_blank">
-                            <i class="fab fa-x-twitter text-google-alt icon-sm mr-3"></i>
-                        </a>
-                    </p>
-                    <p class="pt-2 text-muted">
-                        &copy; 2017 Comply Theme. A Free Bootstrap 4 product landing page theme by 
-                        <a href="https://wireddots.com">Wired Dots</a>. Developed by <a href="https://twitter.com/attacomsian">@attacomsian</a>
-                    </p>
-                </div>
+            <div class="col-sm-4 p-5">
+                <p><em class="ion-ios-email-outline icon-md contact-icon"></em></p>
+                <p class="lead">info.GreenRoots002@gmail.com</p>
+            </div>
+            <div class="col-sm-4 p-5">
+                <p><em class="ion-ios-location-outline icon-md contact-icon"></em></p>
+                <p class="lead">Lahore, Pakistan</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!--footer-->
+<section class="bg-footer" id="connect">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12 text-center wow fadeIn">
+                <h1>GREENROOTS</h1>
+                <p class="mt-4">
+                    <a href="https://www.instagram.com/greenrootsoil/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-instagram text-twitter-alt icon-sm mr-3"></i>
+                    </a>
+                    <a href="https://www.facebook.com/people/GreenRoots/61571062822680/#" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-facebook-f text-facebook-alt icon-sm mr-3"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@greenroot" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-tiktok text-linkedin-alt icon-sm mr-3"></i>
+                    </a>
+                    <a href="https://x.com/GreenRoots_Oil" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-x-twitter text-google-alt icon-sm mr-3"></i>
+                    </a>
+                </p>
+                <p class="pt-2 text-muted">
+                    &copy; 2017-2025 Comply Theme. A Free Bootstrap 4 product landing page theme by 
+                    <a href="https://wireddots.com" target="_blank" rel="noopener noreferrer">Wired Dots</a>. 
+                    Developed by <a href="https://twitter.com/attacomsian" target="_blank" rel="noopener noreferrer">@attacomsian</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDrPPxT8ka5ZrV5wc99i0TdWPKt2kjl+RVBynY+x/9BJrng==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+
+<!-- Custom JavaScript to fix scroll behavior -->
+<!-- Replace the existing script section at the bottom of your HTML with this improved version -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDrPPxT8ka5ZrV5wc99i0TdWPKt2kjl+RVBynY+x/9BJrng==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+
+<!-- Custom JavaScript with improved smooth scrolling -->
+<!-- This is a complete script section - replace your entire script section at the bottom of the HTML with this -->
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDrPPxT8ka5ZrV5wc99i0TdWPKt2kjl+RVBynY+x/9BJrng==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+
+<script>
+// Initialize WOW.js animations
+new WOW({
+    mobile: true,
+    offset: 10,
+    live: true
+}).init();
+
+// Basic document ready function
+$(document).ready(function() {
+    // Basic scrolling functionality
+    $('a.page-scroll').click(function(e) {
+        e.preventDefault();
+        var target = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top - 60
+        }, 800);
+    });
     
-
-
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
-        <script src="js/scripts.js"></script>
-    </body>
+    // Specific handler for navbar links
+    $('.navbar .nav-link').click(function(e) {
+        e.preventDefault();
+        var target = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top - 60
+        }, 800);
+        // Close navbar on mobile
+        $('.navbar-collapse').collapse('hide');
+    });
+    
+    // Specific handler for Buy Now button
+    $('.btn-success.btn-lg').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('#pricing').offset().top - 60
+        }, 800);
+    });
+    
+    // Button hover effects
+    $('.btn').hover(
+        function() {
+            $(this).css('transform', 'translateY(-3px)');
+        },
+        function() {
+            $(this).css('transform', 'translateY(0)');
+        }
+    );
+    
+    // Function to equalize card heights
+    function equalizeCardHeights() {
+        // Reset heights
+        $('.card').css('height', 'auto');
+        
+        // For each row of cards
+        var cardGroups = [
+            $('.pricing-list').closest('.card'),
+            $('#features .card'),
+            $('#blog .card')
+        ];
+        
+        $.each(cardGroups, function(index, cards) {
+            if ($(window).width() >= 768) {
+                // Find max height
+                var maxHeight = 0;
+                $(cards).each(function() {
+                    var height = $(this).outerHeight();
+                    maxHeight = height > maxHeight ? height : maxHeight;
+                });
+                
+                // Set all to max height
+                $(cards).css('height', maxHeight + 'px');
+            }
+        });
+    }
+    
+    // Call equalize function
+    equalizeCardHeights();
+    
+    // Handle window resize
+    $(window).resize(function() {
+        equalizeCardHeights();
+    });
+});
+</script>
+</body>
 </html>
